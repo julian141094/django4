@@ -47,3 +47,8 @@ django-admin startapp name_aplication
 ### Generate requirements.txt file
 
 pip freeze > requirements.txt
+
+
+### Create a super user for django admin
+
+python manage.py createsuperuser
