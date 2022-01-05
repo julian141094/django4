@@ -52,3 +52,15 @@ pip freeze > requirements.txt
 ### Create a super user for django admin
 
 python manage.py createsuperuser
+
+### Document the API with OpenAPI
+
+install 
+
+pip install drf-spectacular
+
+You see (dev):
+
+http://localhost:8000/api/schema/swagger-ui/
+
+http://localhost:8000/api/schema/redoc/
