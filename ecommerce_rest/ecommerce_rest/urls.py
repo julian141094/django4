@@ -17,6 +17,9 @@ from django.urls import include, path, re_path
 from django.contrib import admin
 from apps.users.api.api import UserAPIView
 
+
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('usuario/', UserAPIView.as_view()),
@@ -24,4 +27,10 @@ urlpatterns = [
     path('usuario/',include('apps.users.api.urls')),
     # path('', include('apps.users.api.urls')),
     # re_path(r'^usuario/$', include('apps.users.api.urls')),
+
+    # YOUR PATTERNS
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    # Optional UI:
+    path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
